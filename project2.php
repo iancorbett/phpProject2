@@ -1,5 +1,6 @@
 <?php 
 
+$uploadDir = __DIR__ . '/uploads'; //make uploaded files vieable in a folder called uploads
 $jsonTxtPath = __DIR__ . '/output.txt'; //write json string to a txt file
 
 ?>
