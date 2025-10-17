@@ -1,5 +1,7 @@
 <?php 
 
+$jsonTxtPath = __DIR__ . '/output.txt'; //write json string to a txt file
+
 ?>
 
 <!DOCTYPE html>
