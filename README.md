@@ -5,6 +5,8 @@ This project demonstrates file-upload handling, CSV parsing, JSON encoding, and 
 
 ---
 
+<img width="527" height="560" alt="Screenshot 2025-10-17 at 11 04 20 PM" src="https://github.com/user-attachments/assets/437563a9-7193-48f6-b274-1171671d82fe" />
+
 ##  Overview
 The page lets a user:
 
