@@ -1,0 +1,17 @@
+[
+    {
+        "name": "Ian",
+        "email": "ian@example.com",
+        "city": "Millville"
+    },
+    {
+        "name": "Jane",
+        "email": "jane@example.com",
+        "city": "Reading"
+    },
+    {
+        "name": "Michael",
+        "email": "mike@example.com",
+        "city": "York"
+    }
+]
