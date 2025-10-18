@@ -19,6 +19,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['csv_file'])) { //if 
           $header = array_map('trim', $header); //remove any excess whitespace
           $dataRows = []; //initialize an empty array that will hold all of the csv rows
         }
+
+        while (($row = fgetcsv($fh, 0, ',', '"', '\\')) !== false) { //reads next line as long as theres more to be read
+            if ($row === [null] || count(array_filter($row, 'strlen')) === 0) continue; //skip if row has no data
+            if (count($row) !== count($header)) continue; // ensures we have every field filled out one ttime
+    
+            $dataRows[] = array_combine($header, $row); //merge two arrays into on associative array
+          }
+          fclose($fh); //close file
 }
 
 ?>
