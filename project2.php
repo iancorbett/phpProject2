@@ -58,6 +58,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['csv_file'])) { //if 
   <input type="file" name="csv_file" accept=".csv" required>
   <button type="submit">Upload & Convert</button>
 </form>
+
+<?php if ($message): ?> <!--check to see if theres a message-->
+  <p class="msg"><?= htmlspecialchars($message) ?></p> <!--if there is, then display it-->
+<?php endif; ?>
+
+<?php if ($jsonPretty): ?> <!--check to see if $jsonPretty exists and isnt empty-->
+  <h2>📄 JSON Output (Pretty-Printed)</h2>
+  <textarea readonly><?= htmlspecialchars($jsonPretty) ?></textarea> <!--display in a text area as read only-->
+<?php endif; ?>
     
 </body>
 </html>
