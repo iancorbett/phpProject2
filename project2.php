@@ -35,7 +35,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['csv_file'])) { //if 
           file_put_contents($jsonTxtPath, $jsonPretty); //write the newly styled json string at the proper file path
 
           $message = "CSV uploaded and converted successfully! (Saved to output.txt)";
-}
+    
+        }   else {
+            $message = "Failed to open or upload the uploaded CSV file.";
+          } 
 }
 
 ?>
