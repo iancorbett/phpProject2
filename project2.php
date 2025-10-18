@@ -2,6 +2,8 @@
 
 $uploadDir = __DIR__ . '/uploads'; //make uploaded files vieable in a folder called uploads
 $jsonTxtPath = __DIR__ . '/output.txt'; //write json string to a txt file
+$jsonPretty = '';
+
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['csv_file'])) { //if post request is made and we have a valid csv file
 
@@ -27,6 +29,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['csv_file'])) { //if 
             $dataRows[] = array_combine($header, $row); //merge two arrays into on associative array
           }
           fclose($fh); //close file
+
+          $jsonPretty = json_encode($dataRows, JSON_PRETTY_PRINT); //use built in JSON_PRETTY_PRINT to make eat more easily human readable
+}
 }
 
 ?>
