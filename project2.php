@@ -31,6 +31,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['csv_file'])) { //if 
           fclose($fh); //close file
 
           $jsonPretty = json_encode($dataRows, JSON_PRETTY_PRINT); //use built in JSON_PRETTY_PRINT to make eat more easily human readable
+
+          file_put_contents($jsonTxtPath, $jsonPretty); //write the newly styled json string at the proper file path
 }
 }
 
