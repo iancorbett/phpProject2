@@ -10,6 +10,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['csv_file'])) { //if 
     $tmpName = $_FILES['csv_file']['tmp_name']; //tmpname refers to temporary file path automatically assigned by php
     $fileName = basename($_FILES['csv_file']['name']); //original filename user uploaded
     $targetPath = $uploadDir . '/' . $fileName; //use "." to concatenate upload directory path and file name, final destination of the uploaded file
+
+    if (move_uploaded_file($tmpName, $targetPath)) { //move file from temporary location to uploads folder
+
+        
+        if (($fh = fopen($targetPath, 'r')) !== false) { //open file at new location in read only mode
+          $header = fgetcsv($fh, 0, ',', '"', '\\'); // read the first line from the CSV and store it as an array of column names
+          $header = array_map('trim', $header); //remove any excess whitespace
+          $dataRows = []; //initialize an empty array that will hold all of the csv rows
+        }
 }
 
 ?>
